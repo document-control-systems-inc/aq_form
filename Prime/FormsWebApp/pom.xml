@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.f2m</groupId>
+  <artifactId>forms</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Forms Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+    	<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.plugin>3.0.0-M4</maven.plugin>
+		<maven.compiler>3.8.1</maven.compiler>
+        <junit.version>4.13-rc-2</junit.version>
+        <jetty.port>9091</jetty.port>
+  		<spring.version>4.3.25.RELEASE</spring.version>
+  		<jackson.version>2.6.7</jackson.version>
+  		<servlet.version>4.0.1</servlet.version>
+  		<jstl.version>1.2</jstl.version>
+  		<jsp.version>2.3.3</jsp.version>
+  		<log4j.version>1.2.17</log4j.version>
+  		<sitemesh.version>3.0.1</sitemesh.version>
+	</properties>
+  
+  <dependencies>
+    
+    <!-- junit -->
+    <dependency>
+		<groupId>junit</groupId>
+		<artifactId>junit</artifactId>
+		<version>${junit.version}</version>
+		<scope>test</scope>
+	</dependency>
+	
+	<!-- log4j -->
+	<dependency>
+	    <groupId>log4j</groupId>
+	    <artifactId>log4j</artifactId>
+	    <version>${log4j.version}</version>
+	</dependency>
+	
+	<!-- Web Project -->
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>javax.servlet-api</artifactId>
+    	<version>${servlet.version}</version>
+    	<scope>provided</scope>
+    </dependency>
+    
+    <!-- JSTL -->
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>jstl</artifactId>
+		<version>${jstl.version}</version>
+	</dependency>
+	
+	<!-- JSP -->
+	<dependency>
+	    <groupId>javax.servlet.jsp</groupId>
+	    <artifactId>javax.servlet.jsp-api</artifactId>
+	    <version>${jsp.version}</version>
+	    <scope>provided</scope>
+	</dependency>
+    
+    <!-- Spring -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	<!-- Jackson json -->
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	
+	<dependency>
+		<groupId>com.fasterxml.jackson.dataformat</groupId>
+		<artifactId>jackson-dataformat-xml</artifactId>
+		<version>${jackson.version}</version>
+	</dependency>
+	
+	<!-- sitemesh -->
+	<dependency>
+		<groupId>org.sitemesh</groupId>
+		<artifactId>sitemesh</artifactId>
+		<version>${sitemesh.version}</version>
+	</dependency>
+	
+  </dependencies>
+  
+  <build>
+    <finalName>ROOT</finalName>
+    <plugins>
+    	<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>${maven.plugin}</version>
+			<configuration>
+				<skipTests>true</skipTests>
+			</configuration>
+		</plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>${maven.compiler}</version>
+			<configuration>
+				<source>${maven.compiler.source}</source>
+				<target>${maven.compiler.target}</target>
+				<encoding>${project.build.sourceEncoding}</encoding>
+			</configuration>
+		</plugin>
+    	<!-- Jetty -->
+		<plugin>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-maven-plugin</artifactId>
+			<configuration>
+				<systemProperties>
+					<systemProperty>
+						<name>jetty.port</name>
+						<value>${jetty.port}</value>
+					</systemProperty>
+				</systemProperties>
+			</configuration>
+		</plugin>
+	</plugins>
+  </build>
+</project>

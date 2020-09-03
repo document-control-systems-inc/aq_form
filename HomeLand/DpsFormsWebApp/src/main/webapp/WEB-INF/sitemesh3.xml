@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemesh>
+
+	<mapping path="/" decorator="/WEB-INF/decorators/loginDecorator.jsp"/>
+	<mapping path="/index" decorator="/WEB-INF/decorators/loginDecorator.jsp"/>
+	
+	<mapping path="/home" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	
+	<!-- Stats Controller -->
+	<mapping path="/dashboardForms" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/statsForms" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	
+	<!-- Forms -->
+	<mapping path="/createForm" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/form" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/uploadData" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/view" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/pdf" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	
+	<!-- BPM -->
+	<mapping path="/taskList" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	
+	<!-- DPS -->
+	<mapping path="/contratos" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/detalleContrato" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/nuevoContrato" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/edicionContrato" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	<mapping path="/nuevaEnmienda" decorator="/WEB-INF/decorators/portalDecorator.jsp"/>
+	
+	
+</sitemesh>
